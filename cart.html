@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savatcha</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tfoot {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Savatcha</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mahsulot</th>
+            <th>Miqdor</th>
+            <th>Narx</th>
+            <th>Jami</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.item }}</td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.qty * item.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">Umumiy summa</td>
+            <td>{{ total_sum }}</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
